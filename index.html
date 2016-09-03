@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+<meta charset="UTF-8">
+<title>Chat Entry</title>
+<link rel="stylesheet" href="css/normalize.css" type="text/css" media="all">
+<link rel="stylesheet" href="css/style.css" type="text/css" media="all">
+<link rel="stylesheet" href="css/login.css" type="text/css" media="all">
+</head>
+
+<body>
+<div id="container">
+
+<div id="header">
+ <h1>Chat room</h1>
+</div>
+
+<div id="main">
+ <p>
+  Name:
+  <input type="text" id="name_input" style="width:200px;" /></p>
+ <p>
+  <button onclick="entryRoom()">Entry</button>
+ </p>
+</div><!-- #main -->
+
+<div id="footer">
+ Created by Suginyan
+</div>
+
+<!-- ページの遷移 -->
+<script type="text/javascript">
+ function entryRoom(){
+    var nameInput = document.getElementById('name_input');
+    var url = "http://localhost:8080/" + "?name=" + nameInput.value;
+    var e_url = encodeURI(url);
+    window.location.assign(e_url);
+ }
+</script>
+
+</div><!-- #container -->
+</body>
+
+
+
+</html>
